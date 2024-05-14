@@ -1,5 +1,5 @@
 import { httpClient } from '@/api';
-import { useToast } from '@/components/ui';
+import { useToast } from '@/components/ui/use-toast';
 import { ApiResponseError } from '@/types';
 import { formatDate } from '@/utils';
 import { useMutation, useQueryClient } from '@tanstack/react-query';

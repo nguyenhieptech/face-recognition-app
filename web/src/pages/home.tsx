@@ -1,17 +1,17 @@
 import { useMediaFilesQuery, useUploadMediaMutation } from '@/api';
 import { DashboardLayout } from '@/components/dashboard';
 import { Loader } from '@/components/loader';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import {
-  Button,
-  Card,
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  Input,
-  Label,
-  ScrollArea,
-} from '@/components/ui';
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import {
   ImageIcon,
@@ -36,10 +36,7 @@ export function HomePage() {
   const [dragOver, setDragOver] = useState(false);
   const [fileDropError, setFileDropError] = useState('');
 
-  // TODO: Fetch and show images from API
   const mediaFilesQuery = useMediaFilesQuery();
-  console.log({ mediaFilesQuery: mediaFilesQuery.data });
-
   const mutation = useUploadMediaMutation(mediaFileFormData!);
 
   function handleDragOver(e: React.DragEvent<HTMLLabelElement>) {
