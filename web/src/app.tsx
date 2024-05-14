@@ -1,5 +1,5 @@
-import { HomePage } from '@/pages';
-import { AppProvider } from '@/providers';
+import { HomePage } from "@/pages";
+import { AppProvider } from "@/providers";
 
 function App() {
   return (

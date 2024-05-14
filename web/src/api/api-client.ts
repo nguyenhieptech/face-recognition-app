@@ -1,5 +1,5 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const httpClient = axios.create({
-  baseURL: 'http://0.0.0.0/api/',
+  baseURL: "http://0.0.0.0/api/",
 });

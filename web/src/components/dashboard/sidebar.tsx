@@ -1,18 +1,18 @@
-import { cn } from '@/lib/utils';
-import { LayoutDashboard, Settings } from 'lucide-react';
+import { cn } from "@/lib/utils";
+import { LayoutDashboard, Settings } from "lucide-react";
 
 const routes = [
   {
-    label: 'Dashboard',
+    label: "Dashboard",
     icon: LayoutDashboard,
-    href: '/',
-    color: 'text-sky-500',
+    href: "/",
+    color: "text-sky-500",
   },
   {
-    label: 'Settings',
+    label: "Settings",
     icon: Settings,
-    href: '/',
-    color: 'text-emerald-500',
+    href: "/",
+    color: "text-emerald-500",
   },
 ];
 
@@ -32,12 +32,12 @@ export function Sidebar() {
               key={route.label}
               href={route.href}
               className={cn(
-                'group flex w-full cursor-pointer justify-start rounded-lg p-3 text-sm font-medium transition hover:bg-white/10 hover:text-white'
+                "group flex w-full cursor-pointer justify-start rounded-lg p-3 text-sm font-medium transition hover:bg-white/10 hover:text-white"
                 // pathname === route.href ? 'bg-white/10 text-white' : 'text-slate-400'
               )}
             >
               <div className="flex flex-1 items-center">
-                <route.icon className={cn('mr-3 h-5 w-5', route.color)} />
+                <route.icon className={cn("mr-3 h-5 w-5", route.color)} />
                 {route.label}
               </div>
             </a>

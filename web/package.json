@@ -8,7 +8,9 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\" --config-precedence file-override"
+    "format": "prettier --write \"src/**/*.{ts,tsx}\" --config-precedence file-override",
+    "format:write": "prettier --write \"src/**/*.{ts,tsx}\" --cache --config-precedence file-override",
+    "format:check": "prettier --check \"src**/*.{ts,tsx}\" --cache"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.4",

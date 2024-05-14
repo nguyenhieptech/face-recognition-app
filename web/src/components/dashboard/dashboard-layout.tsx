@@ -1,5 +1,5 @@
-import { Navbar } from './navbar';
-import { Sidebar } from './sidebar';
+import { Navbar } from "./navbar";
+import { Sidebar } from "./sidebar";
 
 export function DashboardLayout({ children }: React.PropsWithChildren) {
   return (

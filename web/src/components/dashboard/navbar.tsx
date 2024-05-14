@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { MobileSidebar } from './mobile-sidebar';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { MobileSidebar } from "./mobile-sidebar";
 
 export function Navbar() {
   return (

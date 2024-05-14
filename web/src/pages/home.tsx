@@ -1,18 +1,18 @@
-import { useMediaFilesQuery, useUploadMediaMutation } from '@/api';
-import { DashboardLayout } from '@/components/dashboard';
-import { Loader } from '@/components/loader';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { useMediaFilesQuery, useUploadMediaMutation } from "@/api";
+import { DashboardLayout } from "@/components/dashboard";
+import { Loader } from "@/components/loader";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { cn } from '@/lib/utils';
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
 import {
   ImageIcon,
   Loader2,
@@ -20,8 +20,8 @@ import {
   Trash2,
   UploadCloud,
   UploadIcon,
-} from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+} from "lucide-react";
+import React, { useEffect, useState } from "react";
 
 // Reference: https://gist.github.com/nguyenhieptech/6f7e0eb97de8cfe8076b8f589dcd90d2
 export function HomePage() {
@@ -34,7 +34,7 @@ export function HomePage() {
     {}
   );
   const [dragOver, setDragOver] = useState(false);
-  const [fileDropError, setFileDropError] = useState('');
+  const [fileDropError, setFileDropError] = useState("");
 
   const mediaFilesQuery = useMediaFilesQuery();
   const mutation = useUploadMediaMutation(mediaFileFormData!);
@@ -53,21 +53,21 @@ export function HomePage() {
     setDragOver(false);
 
     const selectedFiles = Array.from(e.dataTransfer.files);
-    if (selectedFiles.some((file) => file.type.split('/')[0] !== 'image')) {
-      return setFileDropError('Please provide only image files to upload!');
+    if (selectedFiles.some((file) => file.type.split("/")[0] !== "image")) {
+      return setFileDropError("Please provide only image files to upload!");
     }
 
     setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
-    setFileDropError('');
+    setFileDropError("");
   }
 
   function handleChangeFile(e: React.ChangeEvent<HTMLInputElement>) {
     const selectedFiles = Array.from(e.target.files as FileList);
-    if (selectedFiles.some((file) => file.type.split('/')[0] !== 'image')) {
-      return setFileDropError('Please provide only image files to upload!');
+    if (selectedFiles.some((file) => file.type.split("/")[0] !== "image")) {
+      return setFileDropError("Please provide only image files to upload!");
     }
     setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
-    setFileDropError('');
+    setFileDropError("");
   }
 
   function simulateLoading(file: File) {
@@ -79,18 +79,18 @@ export function HomePage() {
     }, duration);
   }
 
-  function formatFileSize(number: number, unit: 'Bytes' | 'MB' = 'MB') {
-    if (unit === 'Bytes') {
+  function formatFileSize(number: number, unit: "Bytes" | "MB" = "MB") {
+    if (unit === "Bytes") {
       const sizeInBytes = number
         .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
       return `${sizeInBytes} ${unit}`;
-    } else if (unit === 'MB') {
+    } else if (unit === "MB") {
       const sizeInMB = number / (1024 * 1024); // Convert to MB
       return `${sizeInMB.toFixed(3)} ${unit}`;
     }
 
-    return '';
+    return "";
   }
 
   function generatePreview(file: File) {
@@ -111,10 +111,10 @@ export function HomePage() {
 
   function handleUploadMediaFile() {
     setFiles([]);
-    setFileDropError('');
+    setFileDropError("");
 
     const fileFormData = new FormData();
-    fileFormData.append('img_file', files[0]);
+    fileFormData.append("img_file", files[0]);
     setMediaFile(fileFormData);
 
     mutation.mutate();
@@ -209,15 +209,15 @@ export function HomePage() {
               >
                 <div
                   className={cn(
-                    'm-2 flex h-52 flex-col items-center justify-center rounded-xl border-[1.5px] border-dashed border-primary/60 bg-primary/[0.02] py-2 hover:cursor-pointer',
-                    dragOver && 'border-blue-600 bg-blue-50'
+                    "m-2 flex h-52 flex-col items-center justify-center rounded-xl border-[1.5px] border-dashed border-primary/60 bg-primary/[0.02] py-2 hover:cursor-pointer",
+                    dragOver && "border-blue-600 bg-blue-50"
                   )}
                 >
                   <div className="flex flex-col items-center justify-start">
                     <UploadCloud
                       className={cn(
-                        'my-4 h-5 w-5 text-slate-600',
-                        dragOver && 'text-blue-500'
+                        "my-4 h-5 w-5 text-slate-600",
+                        dragOver && "text-blue-500"
                       )}
                     />
                     <p className="font-semibold text-primary">
