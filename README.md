@@ -3,27 +3,26 @@
 Table of contents
 -----------------
 
-- [Frontend](#frontend)
-- [Backend](#backend)
+- [Web](#web)
+- [API](#api)
 - [Docker](#docker)
 
-## Frontend
+## Web
 
 Techstack: React
 
 ```bash
-# Open a terminal inside frontend folder
-cd frontend
+# Open a terminal inside web folder
+cd web
 
-# Install dependencies, use node 18.17.0 or later
-yarn install
+# Install dependencies, use node 20.11.0 or later
+pnpm install
 
 # Run project locally in development
-yarn dev
+pnpm dev
 ```
 
-
-## Backend
+## API
 
 Techstack: FastAPI
 
@@ -33,10 +32,9 @@ Techstack: FastAPI
 
 Suggestion: Installation tutorials could be helpful
 
-
 ```bash
 # Open a terminal inside backend folder
-cd backend
+cd api
 
 # Create a new conda environment named face-recognition-api, use python 3.11.x version for stability
 conda create -n face-recognition-api python=3.11.4
