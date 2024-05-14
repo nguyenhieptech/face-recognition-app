@@ -28,7 +28,7 @@ Techstack: FastAPI
 
 1. Install Python v3.11.4: <https://www.python.org/downloads/>
 
-2. Install Miniconda using installer or command line: <https://docs.conda.io/projects/miniconda/en/latest/index.html#quick-command-line-install>
+2. Install Miniconda using installer or command line: <https://docs.anaconda.com/free/miniconda/#quick-command-line-install>
 
 Suggestion: Installation tutorials could be helpful
 
